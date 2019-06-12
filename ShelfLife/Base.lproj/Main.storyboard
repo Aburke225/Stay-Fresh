@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShelfLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fFC-4C-N9P">
+                                <rect key="frame" x="0.0" y="234" width="414" height="503.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z0-Qk-vHT">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter food type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-2T-unq">
+                                        <rect key="frame" x="20" y="33.5" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Pio-Pw-93u">
+                                        <rect key="frame" x="20" y="71.5" width="374" height="374"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Pio-Pw-93u" secondAttribute="height" multiplier="1:1" id="7Os-j7-21N"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="E5f-rJ-LBJ" appends="YES" id="hmy-KX-F1s"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5tW-ps-XHy" customClass="RatingControl" customModule="ShelfLife" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="453.5" width="252" height="50"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="0LZ-Rm-9zi"/>
+                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="2iF-yT-RMb"/>
+                                    <constraint firstItem="5z0-Qk-vHT" firstAttribute="leading" secondItem="ocn-2T-unq" secondAttribute="leading" id="nTM-f9-14T"/>
+                                    <constraint firstItem="Pio-Pw-93u" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="qj2-Mo-gbQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ocn-2T-unq" secondAttribute="trailing" constant="20" id="xK5-BY-EYy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pio-Pw-93u" secondAttribute="trailing" constant="20" id="yID-3e-8Er"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fFC-4C-N9P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="IIf-CD-Iwa"/>
+                            <constraint firstItem="fFC-4C-N9P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mah-f3-gaa"/>
+                            <constraint firstAttribute="trailing" secondItem="fFC-4C-N9P" secondAttribute="trailing" id="Vbi-0S-jC1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="foodTypeLabel" destination="5z0-Qk-vHT" id="Zcb-sI-KQQ"/>
+                        <outlet property="nameTextField" destination="ocn-2T-unq" id="PgB-Yr-SqV"/>
+                        <outlet property="photoImageView" destination="Pio-Pw-93u" id="Vf8-ga-l4R"/>
+                        <outlet property="ratingControl" destination="5tW-ps-XHy" id="6aO-Ya-bqv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E5f-rJ-LBJ">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="xZ1-KW-Lkl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="73.660714285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="540" height="540"/>
+    </resources>
 </document>
