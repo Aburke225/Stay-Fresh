@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FoodViewController.swift
 //  ShelfLife
 //
 //  Created by Andrew Burke on 6/11/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate,
+class FoodViewController: UIViewController, UITextFieldDelegate,
         UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
