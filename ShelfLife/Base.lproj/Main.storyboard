@@ -18,43 +18,211 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgu-Q2-uvT">
+                                <rect key="frame" x="54" y="98" width="126" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="m8j-pk-cdC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Fridge"/>
+                                <connections>
+                                    <action selector="fridge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFo-1y-4EX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3q-6I-AOu">
+                                <rect key="frame" x="235" y="98" width="126" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="sBZ-DP-aPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Freezer"/>
+                                <connections>
+                                    <action selector="freezer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLi-8e-S2U"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fFC-4C-N9P">
-                                <rect key="frame" x="0.0" y="278" width="414" height="470"/>
+                                <rect key="frame" x="8" y="144" width="398" height="114"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter food type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-2T-unq">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="30"/>
+                                        <rect key="frame" x="40" y="0.0" width="318" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pio-Pw-93u">
-                                        <rect key="frame" x="20" y="38" width="374" height="374"/>
-                                        <gestureRecognizers/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose below:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-oc-kEl">
+                                        <rect key="frame" x="126.5" y="38" width="145.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rPU-8E-oBd">
+                                        <rect key="frame" x="8" y="76" width="382" height="38"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-3N-Lbv">
+                                                <rect key="frame" x="8" y="0.0" width="366" height="38"/>
+                                                <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="selectButton"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <state key="normal" title="Select a food group">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handleSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPh-qP-brf"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbh-Y5-bp5">
+                                                <rect key="frame" x="8" y="42" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Bacon and Sausage"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rhg-Av-l0I"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iby-Q4-ou3">
+                                                <rect key="frame" x="8" y="46" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Beef, Veal, Lamb, and Pork"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mL2-n7-wON"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwA-Rj-qln">
+                                                <rect key="frame" x="8" y="50" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Cold Cuts"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMC-Fx-Lbb"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEb-ii-5Nb">
+                                                <rect key="frame" x="8" y="54" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Eggs"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dj9-jT-LPs"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-LZ-gs4">
+                                                <rect key="frame" x="8" y="58" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Ground Meat"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Lm-7z-B7b"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-yD-UXQ">
+                                                <rect key="frame" x="8" y="62" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Ham"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fv4-a1-nOI"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abn-82-gSK">
+                                                <rect key="frame" x="8" y="66" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Hot Dogs"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zjq-dQ-Eux"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5f-5J-Ijw">
+                                                <rect key="frame" x="8" y="70" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Leftovers"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="632-mh-AS8"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-Ar-quH">
+                                                <rect key="frame" x="8" y="74" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Poultry"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Caw-ON-F34"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-ZK-lOP">
+                                                <rect key="frame" x="8" y="78" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Salad"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R7y-Oq-Snv"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-x7-JAZ">
+                                                <rect key="frame" x="8" y="82" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Soups and Stews"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wj0-g5-dKT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Pio-Pw-93u" secondAttribute="height" multiplier="1:1" id="7Os-j7-21N"/>
+                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="top" secondItem="iby-Q4-ou3" secondAttribute="bottom" constant="4" id="0iP-Wb-VbS"/>
+                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="1Zu-nj-Nda"/>
+                                            <constraint firstItem="abn-82-gSK" firstAttribute="top" secondItem="FNS-yD-UXQ" secondAttribute="bottom" constant="4" id="3HT-jc-zYc"/>
+                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="6k3-7P-BqN"/>
+                                            <constraint firstItem="qyX-3N-Lbv" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="8MM-5V-j0U"/>
+                                            <constraint firstAttribute="trailing" secondItem="dwA-Rj-qln" secondAttribute="trailing" constant="8" id="9EF-gs-Vd3"/>
+                                            <constraint firstAttribute="trailing" secondItem="LeD-x7-JAZ" secondAttribute="trailing" constant="8" id="BWc-vg-DAf"/>
+                                            <constraint firstAttribute="trailing" secondItem="jBf-LZ-gs4" secondAttribute="trailing" constant="8" id="CWK-BN-2aF"/>
+                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="top" secondItem="Nbh-Y5-bp5" secondAttribute="bottom" constant="4" id="Cid-YN-HiU"/>
+                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="ICh-Kb-wYa"/>
+                                            <constraint firstAttribute="trailing" secondItem="0mv-ZK-lOP" secondAttribute="trailing" constant="8" id="LfQ-Y0-kAE"/>
+                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="top" secondItem="abn-82-gSK" secondAttribute="bottom" constant="4" id="NQl-lY-ckk"/>
+                                            <constraint firstAttribute="trailing" secondItem="nYz-Ar-quH" secondAttribute="trailing" constant="8" id="SRD-eI-GDf"/>
+                                            <constraint firstAttribute="trailing" secondItem="abn-82-gSK" secondAttribute="trailing" constant="8" id="Sjb-FQ-VMu"/>
+                                            <constraint firstAttribute="trailing" secondItem="nEb-ii-5Nb" secondAttribute="trailing" constant="8" id="TXN-Uk-U6e"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nbh-Y5-bp5" secondAttribute="trailing" constant="8" id="Uxz-RW-LUA"/>
+                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="top" secondItem="jBf-LZ-gs4" secondAttribute="bottom" constant="4" id="VTh-2L-E3k"/>
+                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="top" secondItem="nYz-Ar-quH" secondAttribute="bottom" constant="4" id="ZHZ-Hj-vc5"/>
+                                            <constraint firstAttribute="trailing" secondItem="iby-Q4-ou3" secondAttribute="trailing" constant="8" id="Zon-po-1rD"/>
+                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="top" secondItem="nEb-ii-5Nb" secondAttribute="bottom" constant="4" id="aMA-nV-IW8"/>
+                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="top" secondItem="0mv-ZK-lOP" secondAttribute="bottom" constant="4" id="cuC-lf-FIs"/>
+                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="top" secondItem="qyX-3N-Lbv" secondAttribute="bottom" constant="4" id="eUk-yr-ZeA"/>
+                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="frY-2R-G7L"/>
+                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="gAs-56-6Wc"/>
+                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="gEW-3T-U8J"/>
+                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="top" secondItem="dwA-Rj-qln" secondAttribute="bottom" constant="4" id="j5L-n3-1Le"/>
+                                            <constraint firstItem="abn-82-gSK" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="jcz-Qs-h8T"/>
+                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="mXq-w5-ifa"/>
+                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="nA0-du-Tka"/>
+                                            <constraint firstAttribute="trailing" secondItem="qyX-3N-Lbv" secondAttribute="trailing" constant="8" id="sNL-wh-2nf"/>
+                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="top" secondItem="S5f-5J-Ijw" secondAttribute="bottom" constant="4" id="sZ0-uR-oFZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="FNS-yD-UXQ" secondAttribute="trailing" constant="8" id="tRY-18-KXH"/>
+                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="vDT-3I-sJ5"/>
+                                            <constraint firstAttribute="trailing" secondItem="S5f-5J-Ijw" secondAttribute="trailing" constant="8" id="vls-QE-X4q"/>
+                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="ySf-HC-mPI"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="E5f-rJ-LBJ" appends="YES" id="hmy-KX-F1s"/>
-                                        </connections>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5tW-ps-XHy" customClass="RatingControl" customModule="ShelfLife" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="420" width="252" height="50"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="0LZ-Rm-9zi"/>
-                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="2iF-yT-RMb"/>
-                                    <constraint firstItem="Pio-Pw-93u" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="20" id="qj2-Mo-gbQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="ocn-2T-unq" secondAttribute="trailing" constant="20" id="xK5-BY-EYy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pio-Pw-93u" secondAttribute="trailing" constant="20" id="yID-3e-8Er"/>
+                                    <constraint firstAttribute="trailing" secondItem="rPU-8E-oBd" secondAttribute="trailing" constant="8" id="72P-Ir-U44"/>
+                                    <constraint firstAttribute="bottom" secondItem="rPU-8E-oBd" secondAttribute="bottom" id="78u-A1-ACf"/>
+                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="40" id="Pi9-7d-Qs5"/>
+                                    <constraint firstItem="ocn-2T-unq" firstAttribute="top" secondItem="fFC-4C-N9P" secondAttribute="top" id="QuG-to-fPK"/>
+                                    <constraint firstItem="rPU-8E-oBd" firstAttribute="top" secondItem="Ajs-oc-kEl" secondAttribute="bottom" constant="8" id="W7S-qK-KQp"/>
+                                    <constraint firstItem="rPU-8E-oBd" firstAttribute="top" secondItem="Ajs-oc-kEl" secondAttribute="bottom" constant="8" id="dqy-Qj-Ogh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ocn-2T-unq" secondAttribute="trailing" constant="40" id="qZD-Ad-AoR"/>
+                                    <constraint firstItem="rPU-8E-oBd" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="8" id="rJf-sc-Bji"/>
+                                    <constraint firstItem="Ajs-oc-kEl" firstAttribute="top" secondItem="ocn-2T-unq" secondAttribute="bottom" constant="8" id="vZh-F0-zXe"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fFC-4C-N9P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="190" id="IIf-CD-Iwa"/>
-                            <constraint firstItem="fFC-4C-N9P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mah-f3-gaa"/>
-                            <constraint firstAttribute="trailing" secondItem="fFC-4C-N9P" secondAttribute="trailing" id="Vbi-0S-jC1"/>
+                            <constraint firstItem="M3q-6I-AOu" firstAttribute="leading" secondItem="Sgu-Q2-uvT" secondAttribute="trailing" constant="55" id="4In-Du-HqG"/>
+                            <constraint firstItem="Sgu-Q2-uvT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Be0-d9-Ry1"/>
+                            <constraint firstItem="fFC-4C-N9P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K72-U2-5Oj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3q-6I-AOu" secondAttribute="trailing" constant="53" id="KDx-Ko-Iej"/>
+                            <constraint firstItem="Sgu-Q2-uvT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="Q0y-ry-YjO"/>
+                            <constraint firstItem="fFC-4C-N9P" firstAttribute="top" secondItem="Sgu-Q2-uvT" secondAttribute="bottom" constant="10" id="TGi-36-cCH"/>
+                            <constraint firstItem="fFC-4C-N9P" firstAttribute="top" secondItem="M3q-6I-AOu" secondAttribute="bottom" constant="10" id="VWY-6P-sMX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fFC-4C-N9P" secondAttribute="trailing" constant="8" id="dcU-te-bZp"/>
+                            <constraint firstItem="M3q-6I-AOu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="oSx-La-FCd"/>
+                            <constraint firstItem="M3q-6I-AOu" firstAttribute="leading" secondItem="Sgu-Q2-uvT" secondAttribute="trailing" constant="55" id="wMz-0d-Xl0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,10 +239,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonResult" destination="Ajs-oc-kEl" id="DcJ-2B-CcL"/>
                         <outlet property="doneButton" destination="vXE-wJ-Vsf" id="Bk3-hE-iop"/>
                         <outlet property="nameTextField" destination="ocn-2T-unq" id="PgB-Yr-SqV"/>
-                        <outlet property="photoImageView" destination="Pio-Pw-93u" id="Vf8-ga-l4R"/>
-                        <outlet property="ratingControl" destination="5tW-ps-XHy" id="6aO-Ya-bqv"/>
+                        <outletCollection property="foodTypes" destination="Nbh-Y5-bp5" collectionClass="NSMutableArray" id="nwu-cu-sMn"/>
+                        <outletCollection property="foodTypes" destination="iby-Q4-ou3" collectionClass="NSMutableArray" id="UXS-LW-Lhv"/>
+                        <outletCollection property="foodTypes" destination="dwA-Rj-qln" collectionClass="NSMutableArray" id="trp-44-tun"/>
+                        <outletCollection property="foodTypes" destination="nEb-ii-5Nb" collectionClass="NSMutableArray" id="t1R-Wc-LJv"/>
+                        <outletCollection property="foodTypes" destination="jBf-LZ-gs4" collectionClass="NSMutableArray" id="Ave-Hy-9m5"/>
+                        <outletCollection property="foodTypes" destination="FNS-yD-UXQ" collectionClass="NSMutableArray" id="Qyt-uh-LKu"/>
+                        <outletCollection property="foodTypes" destination="abn-82-gSK" collectionClass="NSMutableArray" id="oSX-gg-BBG"/>
+                        <outletCollection property="foodTypes" destination="S5f-5J-Ijw" collectionClass="NSMutableArray" id="T1f-g9-pJu"/>
+                        <outletCollection property="foodTypes" destination="nYz-Ar-quH" collectionClass="NSMutableArray" id="NSR-zC-jNJ"/>
+                        <outletCollection property="foodTypes" destination="0mv-ZK-lOP" collectionClass="NSMutableArray" id="TYv-n9-Pw3"/>
+                        <outletCollection property="foodTypes" destination="LeD-x7-JAZ" collectionClass="NSMutableArray" id="VKG-0w-lM6"/>
+                        <outletCollection property="selectButton" destination="qyX-3N-Lbv" collectionClass="NSMutableArray" id="5Ps-GH-CXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,38 +282,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-r2-UwS">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-6a-Tab">
-                                            <rect key="frame" x="98" y="11" width="296" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="296" id="fBS-jp-yhG"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-6a-Tab">
+                                            <rect key="frame" x="125" y="11" width="269" height="27"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-dv-ULf" customClass="RatingControl" customModule="ShelfLife" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="35" width="252" height="44"/>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSM-eH-dGF">
+                                            <rect key="frame" x="125" y="45" width="269" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-r2-UwS">
+                                            <rect key="frame" x="20" y="0.0" width="91" height="89.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="91" id="sRx-oD-54E"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="centerY" secondItem="dWe-jk-ibo" secondAttribute="centerY" id="OE8-dH-Xzn"/>
-                                        <constraint firstItem="58B-6a-Tab" firstAttribute="top" secondItem="dWe-jk-ibo" secondAttribute="topMargin" id="Rwi-jy-uPq"/>
-                                        <constraint firstItem="58B-6a-Tab" firstAttribute="leading" secondItem="zmR-r2-UwS" secondAttribute="trailing" constant="8" symbolic="YES" id="ZKT-k7-gU7"/>
-                                        <constraint firstItem="58B-6a-Tab" firstAttribute="trailing" secondItem="dWe-jk-ibo" secondAttribute="trailingMargin" id="byw-cm-tdP"/>
-                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="leading" secondItem="dWe-jk-ibo" secondAttribute="leading" id="dTr-xz-oKj"/>
-                                        <constraint firstItem="58B-6a-Tab" firstAttribute="leading" secondItem="hdN-dv-ULf" secondAttribute="leading" id="kWb-0T-2DE"/>
-                                        <constraint firstItem="hdN-dv-ULf" firstAttribute="top" secondItem="58B-6a-Tab" secondAttribute="bottom" constant="3" id="rPT-EP-2EA"/>
-                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="top" secondItem="dWe-jk-ibo" secondAttribute="top" id="txP-W8-Xtr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wSM-eH-dGF" secondAttribute="bottom" constant="-8" id="7FI-4d-8lV"/>
+                                        <constraint firstItem="58B-6a-Tab" firstAttribute="trailing" secondItem="dWe-jk-ibo" secondAttribute="trailingMargin" id="Fut-WL-4XG"/>
+                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="top" secondItem="dWe-jk-ibo" secondAttribute="top" id="Kl5-hh-MS3"/>
+                                        <constraint firstItem="58B-6a-Tab" firstAttribute="leading" secondItem="wSM-eH-dGF" secondAttribute="leading" id="LkB-1e-K4i"/>
+                                        <constraint firstAttribute="bottom" secondItem="wSM-eH-dGF" secondAttribute="bottom" constant="2.5" id="MSn-7E-1ie"/>
+                                        <constraint firstItem="58B-6a-Tab" firstAttribute="trailing" secondItem="wSM-eH-dGF" secondAttribute="trailing" id="QdD-4k-ljR"/>
+                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="centerY" secondItem="dWe-jk-ibo" secondAttribute="centerY" id="fWt-em-ozH"/>
+                                        <constraint firstItem="58B-6a-Tab" firstAttribute="top" secondItem="dWe-jk-ibo" secondAttribute="topMargin" id="fqQ-B2-mZL"/>
+                                        <constraint firstItem="zmR-r2-UwS" firstAttribute="leading" secondItem="dWe-jk-ibo" secondAttribute="leadingMargin" id="oLQ-J8-pxt"/>
+                                        <constraint firstItem="58B-6a-Tab" firstAttribute="leading" secondItem="zmR-r2-UwS" secondAttribute="trailing" constant="14" id="rPm-59-toa"/>
+                                        <constraint firstItem="wSM-eH-dGF" firstAttribute="top" secondItem="58B-6a-Tab" secondAttribute="bottom" constant="7" id="xWM-gZ-Zuv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="58B-6a-Tab" id="f5C-ot-l12"/>
                                     <outlet property="photoImageView" destination="zmR-r2-UwS" id="Nsh-78-jXV"/>
-                                    <outlet property="ratingControl" destination="hdN-dv-ULf" id="jRv-C1-fxh"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="YQi-Kk-2iB"/>
+                                    <outlet property="timeLabel" destination="wSM-eH-dGF" id="KtC-3Y-1Dm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -195,7 +381,4 @@
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="YQi-Kk-2iB"/>
-    </inferredMetricsTieBreakers>
 </document>

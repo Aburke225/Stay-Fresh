@@ -11,6 +11,9 @@ import os.log
 
 class FoodTableViewController: UITableViewController {
     
+    
+    var timer = Timer()
+    
     //MARK: Properties
     
     var foods = [Meal]()
@@ -23,11 +26,14 @@ class FoodTableViewController: UITableViewController {
         
         let savedMeals = loadMeals()
         
+        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: (#selector(FoodTableViewController.updateTimer)), userInfo: nil, repeats: true)
+        
         if savedMeals?.count ?? 0 > 0 {
             foods = savedMeals ?? [Meal]()
-        } else {
-            loadSampleMeals()
         }
+//        else {
+//            loadSampleMeals()
+//        }
         
     }
 
@@ -52,12 +58,40 @@ class FoodTableViewController: UITableViewController {
         
         // Fetches the appropriate meal for the data source layout.
         let food = foods[indexPath.row]
-
+        
         cell.nameLabel.text = food.name
         cell.photoImageView.image = food.photo
-        cell.ratingControl.rating = food.rating
+        
+        if food.timeLabel >= 0 {
+            cell.timeLabel.text = String(food.timeLabel) + " days left"
+        } else {
+            cell.timeLabel.text = "Expired"
+            cell.timeLabel.textColor = UIColor.red
+            cell.nameLabel.backgroundColor = UIColor.red
+        }
         
         return cell
+    }
+    
+    @objc func updateTimer() {
+        let date = Date() // now
+        let cal = Calendar.current
+        let today = cal.ordinality(of: .day, in: .year, for: date)
+        
+        for food in foods {
+            var difference = today! - food.todayDay
+            
+            if difference < 0 {
+                difference += 365
+                food.timeLabel -= difference
+                food.todayDay += (difference - 365)
+            } else {
+                food.timeLabel -= difference
+                food.todayDay += difference
+            }
+        }
+        saveFoods()
+        tableView.reloadData()
     }
 
     // Override to support conditional editing of the table view.
@@ -150,69 +184,7 @@ class FoodTableViewController: UITableViewController {
             
         }
     }
-    
-    //MARK: Private Methods
-    
-    private func loadSampleMeals() {
-        let photoBS = UIImage(named: "Bacon and Sausage")
-        let photoBVLP = UIImage(named: "Beef, Veal, Lamb, and Pork")
-        let photoCC = UIImage(named: "Cold Cuts")
-        let photoE = UIImage(named: "Eggs")
-        let photoGM = UIImage(named: "Ground Meat")
-        let photoH = UIImage(named: "Ham")
-        let photoHD = UIImage(named: "Hot Dogs")
-        let photoL = UIImage(named: "Leftovers")
-        let photoP = UIImage(named: "Poultry")
-        let photoS = UIImage(named: "Salad")
-        let photoSS = UIImage(named: "Soups and Stews")
-        
-        guard let BS = Meal(name: "Bacon and Sausage", photo: photoBS, rating: 4) else {
-            fatalError("Unable to instantiate mealBS")
-        }
-        
-        guard let BVLP = Meal(name: "Beef, Veal, Lamb, and Pork", photo: photoBVLP, rating: 5) else {
-            fatalError("Unable to instantiate mealBVLP")
-        }
-        
-        guard let CC = Meal(name: "Cold Cuts", photo: photoCC, rating: 3) else {
-            fatalError("Unable to instantiate mealCC")
-        }
-        
-        guard let E = Meal(name: "Eggs", photo: photoE, rating: 4) else {
-            fatalError("Unable to instantiate mealE")
-        }
-        
-        guard let GM = Meal(name: "Ground Meat", photo: photoGM, rating: 5) else {
-            fatalError("Unable to instantiate mealGM")
-        }
-        
-        guard let H = Meal(name: "Ham", photo: photoH, rating: 3) else {
-            fatalError("Unable to instantiate mealH")
-        }
-        
-        guard let HD = Meal(name: "Hot Dogs", photo: photoHD, rating: 4) else {
-            fatalError("Unable to instantiate mealHD")
-        }
-        
-        guard let L = Meal(name: "Leftovers", photo: photoL, rating: 5) else {
-            fatalError("Unable to instantiate mealL")
-        }
-        
-        guard let P = Meal(name: "Poultry", photo: photoP, rating: 3) else {
-            fatalError("Unable to instantiate mealP")
-        }
-        
-        guard let S = Meal(name: "Salad", photo: photoS, rating: 4) else {
-            fatalError("Unable to instantiate mealS")
-        }
-        
-        guard let SS = Meal(name: "Soups and Stews", photo: photoSS, rating: 5) else {
-            fatalError("Unable to instantiate mealSS")
-        }
-        
-        foods += [BS, BVLP, CC, E, GM, H, HD, L, P, S, SS]
-        
-    }
+
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

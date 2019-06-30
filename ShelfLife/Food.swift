@@ -16,6 +16,9 @@ class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
+    var foodGroup: String
+    var timeLabel: Int
+    var todayDay: Int
     
     //MARK: Archiving Paths
     
@@ -27,26 +30,31 @@ class Meal: NSObject, NSCoding {
     struct PropertyKey {
         static let name = "name"
         static let photo = "photo"
-        static let rating = "rating"
+        static let foodGroup = "foodGroup"
+        static let timeLabel = "timeLabel"
+        static let todayDay = "todayDay"
     }
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, foodGroup: String, timeLabel: Int, todayDay: Int) {
         // The name must not be empty
         guard !name.isEmpty else {
             return nil
         }
         
-        // The rating must be between 0 and 5 inclusively
-        guard (rating >= 0) && (rating <= 5) else {
+        // The foodGroup must not be empty
+        guard !foodGroup.isEmpty else {
             return nil
         }
         
         // Initialize stored properties.
         self.name = name
         self.photo = photo
-        self.rating = rating
+        self.rating = 3
+        self.foodGroup = foodGroup
+        self.timeLabel = timeLabel
+        self.todayDay = todayDay
         
     }
     
@@ -55,7 +63,9 @@ class Meal: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(foodGroup, forKey: PropertyKey.foodGroup)
+        aCoder.encode(timeLabel, forKey: PropertyKey.timeLabel)
+        aCoder.encode(todayDay, forKey: PropertyKey.todayDay)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -69,10 +79,16 @@ class Meal: NSObject, NSCoding {
         // Because photo is an optional property of Meal, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         
-        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
+//        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
+        
+        guard let foodGroup = aDecoder.decodeObject(forKey: PropertyKey.foodGroup) as? String else { return nil }
+        
+        let timeLabel = aDecoder.decodeInteger(forKey: PropertyKey.timeLabel)
+        
+        let todayDay = aDecoder.decodeInteger(forKey: PropertyKey.todayDay)
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, foodGroup: foodGroup, timeLabel: timeLabel, todayDay: todayDay)
     }
     
 }

@@ -31,17 +31,17 @@ import UIKit
         }
     }
 
-    //MARK: Initialization
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButtons()
-    }
-    
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-        setupButtons()
-    }
+//    //MARK: Initialization
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupButtons()
+//    }
+//
+//    required init(coder: NSCoder) {
+//        super.init(coder: coder)
+//        setupButtons()
+//    }
     
     //MARK: Button Action
     

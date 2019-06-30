@@ -12,18 +12,31 @@ import os.log
 class FoodViewController: UIViewController, UITextFieldDelegate,
         UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var boolean = true
+    
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet var selectButton: [UIButton]!
+    @IBOutlet weak var buttonResult: UITextField!
+    
+    @IBAction func fridge(_ sender: AnyObject) {
+        boolean = true
+    }
+    
+    @IBAction func freezer(_ sender: AnyObject) {
+        boolean = false
+    }
     
     /*
      This value is either passed by `FoodTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new food.
      */
     var food: Meal?
+    var days = 0.0
     
+    @IBOutlet var foodTypes: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +46,9 @@ class FoodViewController: UIViewController, UITextFieldDelegate,
         
         // Set up views if editing an existing Meal.
         if let meal = food {
-            navigationItem.title = meal.name
-            nameTextField.text   = meal.name
+            buttonResult.text = meal.foodGroup
+            nameTextField.text = meal.name
             photoImageView.image = meal.photo
-            ratingControl.rating = meal.rating
         }
         
         // Enable the Done button only if the text field has a valid Meal name.
@@ -69,12 +81,12 @@ class FoodViewController: UIViewController, UITextFieldDelegate,
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
-        guard let selectedImage = info[.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-        }
+//        guard let selectedImage = info[.originalImage] as? UIImage else {
+//            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+//        }
         
         // Set photoImageView to display the selected image.
-        photoImageView.image = selectedImage
+//        photoImageView.image = UIImage(named: buttonResult.text!)
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
@@ -111,11 +123,67 @@ class FoodViewController: UIViewController, UITextFieldDelegate,
         }
         
         let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
-        let rating = ratingControl.rating
+        let photo = UIImage(named: buttonResult.text!)
+        let foodGroup = buttonResult.text ?? ""
+        
+        if boolean {
+            if foodGroup == "Bacon and Sausage" {
+                days = 7
+            } else if foodGroup == "Beef, Veal, Lamb, and Pork" {
+                days = 5
+            } else if foodGroup == "Cold Cuts" {
+                days = 5
+            } else if foodGroup == "Eggs" {
+                days = 21
+            } else if foodGroup == "Ground Meat" {
+                days = 2
+            } else if foodGroup == "Ham" {
+                days = 5
+            } else if foodGroup == "Hot Dogs" {
+                days = 7
+            } else if foodGroup == "Leftovers" {
+                days = 3
+            } else if foodGroup == "Poultry" {
+                days = 2
+            } else if foodGroup == "Salad" {
+                days = 4
+            } else {
+                days = 4
+            }
+        } else {
+            if foodGroup == "Bacon and Sausage" {
+                days = 30
+            } else if foodGroup == "Beef, Veal, Lamb, and Pork" {
+                days = 120
+            } else if foodGroup == "Cold Cuts" {
+                days = 60
+            } else if foodGroup == "Eggs" {
+                days = 0
+            } else if foodGroup == "Ground Meat" {
+                days = 120
+            } else if foodGroup == "Ham" {
+                days = 60
+            } else if foodGroup == "Hot Dogs" {
+                days = 60
+            } else if foodGroup == "Leftovers" {
+                days = 30
+            } else if foodGroup == "Poultry" {
+                days = 270
+            } else if foodGroup == "Salad" {
+                days = 0
+            } else {
+                days = 60
+            }
+        }
+        
+        let date = Date() // now
+        let cal = Calendar.current
+        let todayDay = cal.ordinality(of: .day, in: .year, for: date)
+        
+        let timeLabel = Int(days)
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        food = Meal(name: name, photo: photo, rating: rating)
+        food = Meal(name: name, photo: photo, foodGroup: foodGroup, timeLabel: timeLabel, todayDay: todayDay!)
     }
     
     //MARK: Actions
@@ -135,12 +203,67 @@ class FoodViewController: UIViewController, UITextFieldDelegate,
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func handleSelection(_ sender: UIButton) {
+        foodTypes.forEach { (button) in
+            button.isHidden = !button.isHidden
+        }
+    }
+    
+    enum Foods: String {
+        case BS = "Bacon and Sausage"
+        case BVLP = "Beef, Veal, Lamb, and Pork"
+        case CC = "Cold Cuts"
+        case E = "Eggs"
+        case GM = "Ground Meat"
+        case H = "Ham"
+        case HD = "Hot Dogs"
+        case L = "Leftovers"
+        case P = "Poultry"
+        case S = "Salad"
+        case SS = "Soups and Stews"
+    }
+    
+    @IBAction func foodTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let food = Foods(rawValue: title) else {
+            return
+        }
+        
+        switch food {
+        case .BS:
+            buttonResult.text = "Bacon and Sausage"
+        case .BVLP:
+            buttonResult.text = "Beef, Veal, Lamb, and Pork"
+        case .CC:
+            buttonResult.text = "Cold Cuts"
+        case .E:
+            buttonResult.text = "Eggs"
+        case .GM:
+            buttonResult.text = "Ground Meat"
+        case .H:
+            buttonResult.text = "Ham"
+        case .HD:
+            buttonResult.text = "Hot Dogs"
+        case .L:
+            buttonResult.text = "Leftovers"
+        case .P:
+            buttonResult.text = "Poultry"
+        case .S:
+            buttonResult.text = "Salad"
+        default:
+            buttonResult.text = "Soups and Stews"
+        }
+        
+        updateDoneButtonState()
+    }
+    
+    
     //MARK: Private Methods
     
     private func updateDoneButtonState() {
         // Disable the Done button if the text field is empty.
         let text = nameTextField.text ?? ""
-        doneButton.isEnabled = !text.isEmpty
+        let bR = buttonResult.text ?? ""
+        doneButton.isEnabled = !text.isEmpty && !bR.isEmpty
     }
     
 }
