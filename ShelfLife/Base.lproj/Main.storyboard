@@ -41,22 +41,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fFC-4C-N9P">
-                                <rect key="frame" x="8" y="144" width="398" height="114"/>
+                                <rect key="frame" x="8" y="144" width="398" height="76"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter food type" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-2T-unq">
-                                        <rect key="frame" x="40" y="0.0" width="318" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of food" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-2T-unq">
+                                        <rect key="frame" x="108.5" y="0.0" width="181.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose below:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ajs-oc-kEl">
-                                        <rect key="frame" x="126.5" y="38" width="145.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rPU-8E-oBd">
-                                        <rect key="frame" x="8" y="76" width="382" height="38"/>
+                                        <rect key="frame" x="8" y="38" width="382" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-3N-Lbv">
                                                 <rect key="frame" x="8" y="0.0" width="366" height="38"/>
@@ -71,39 +65,55 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbh-Y5-bp5">
-                                                <rect key="frame" x="8" y="42" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Bacon and Sausage"/>
                                                 <connections>
                                                     <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rhg-Av-l0I"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iby-Q4-ou3">
-                                                <rect key="frame" x="8" y="46" width="366" height="0.0"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iby-Q4-ou3" userLabel="BVLP">
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Beef, Veal, Lamb, and Pork"/>
                                                 <connections>
                                                     <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mL2-n7-wON"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwA-Rj-qln">
-                                                <rect key="frame" x="8" y="50" width="366" height="0.0"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwA-Rj-qln" userLabel="CC">
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Cold Cuts"/>
                                                 <connections>
                                                     <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMC-Fx-Lbb"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvj-AD-Jdi">
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Dairy"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFl-Vc-VrP"/>
+                                                </connections>
+                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEb-ii-5Nb">
-                                                <rect key="frame" x="8" y="54" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Eggs"/>
                                                 <connections>
                                                     <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dj9-jT-LPs"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-v8-0pb">
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Fruits and Vegetables"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Wm-vd-gwD"/>
+                                                </connections>
+                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBf-LZ-gs4">
-                                                <rect key="frame" x="8" y="58" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Ground Meat"/>
                                                 <connections>
@@ -111,7 +121,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-yD-UXQ">
-                                                <rect key="frame" x="8" y="62" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Ham"/>
                                                 <connections>
@@ -119,7 +129,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abn-82-gSK">
-                                                <rect key="frame" x="8" y="66" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Hot Dogs"/>
                                                 <connections>
@@ -127,7 +137,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5f-5J-Ijw">
-                                                <rect key="frame" x="8" y="70" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Leftovers"/>
                                                 <connections>
@@ -135,7 +145,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-Ar-quH">
-                                                <rect key="frame" x="8" y="74" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Poultry"/>
                                                 <connections>
@@ -143,15 +153,23 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-ZK-lOP">
-                                                <rect key="frame" x="8" y="78" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Salad"/>
                                                 <connections>
                                                     <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R7y-Oq-Snv"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fne-TF-EqV">
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Seafood"/>
+                                                <connections>
+                                                    <action selector="foodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ejp-mp-c89"/>
+                                                </connections>
+                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-x7-JAZ">
-                                                <rect key="frame" x="8" y="82" width="366" height="0.0"/>
+                                                <rect key="frame" x="8" y="38" width="366" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <state key="normal" title="Soups and Stews"/>
                                                 <connections>
@@ -160,54 +178,64 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="top" secondItem="iby-Q4-ou3" secondAttribute="bottom" constant="4" id="0iP-Wb-VbS"/>
-                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="1Zu-nj-Nda"/>
-                                            <constraint firstItem="abn-82-gSK" firstAttribute="top" secondItem="FNS-yD-UXQ" secondAttribute="bottom" constant="4" id="3HT-jc-zYc"/>
-                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="6k3-7P-BqN"/>
-                                            <constraint firstItem="qyX-3N-Lbv" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="8MM-5V-j0U"/>
-                                            <constraint firstAttribute="trailing" secondItem="dwA-Rj-qln" secondAttribute="trailing" constant="8" id="9EF-gs-Vd3"/>
-                                            <constraint firstAttribute="trailing" secondItem="LeD-x7-JAZ" secondAttribute="trailing" constant="8" id="BWc-vg-DAf"/>
-                                            <constraint firstAttribute="trailing" secondItem="jBf-LZ-gs4" secondAttribute="trailing" constant="8" id="CWK-BN-2aF"/>
-                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="top" secondItem="Nbh-Y5-bp5" secondAttribute="bottom" constant="4" id="Cid-YN-HiU"/>
-                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="ICh-Kb-wYa"/>
-                                            <constraint firstAttribute="trailing" secondItem="0mv-ZK-lOP" secondAttribute="trailing" constant="8" id="LfQ-Y0-kAE"/>
-                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="top" secondItem="abn-82-gSK" secondAttribute="bottom" constant="4" id="NQl-lY-ckk"/>
-                                            <constraint firstAttribute="trailing" secondItem="nYz-Ar-quH" secondAttribute="trailing" constant="8" id="SRD-eI-GDf"/>
-                                            <constraint firstAttribute="trailing" secondItem="abn-82-gSK" secondAttribute="trailing" constant="8" id="Sjb-FQ-VMu"/>
-                                            <constraint firstAttribute="trailing" secondItem="nEb-ii-5Nb" secondAttribute="trailing" constant="8" id="TXN-Uk-U6e"/>
-                                            <constraint firstAttribute="trailing" secondItem="Nbh-Y5-bp5" secondAttribute="trailing" constant="8" id="Uxz-RW-LUA"/>
-                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="top" secondItem="jBf-LZ-gs4" secondAttribute="bottom" constant="4" id="VTh-2L-E3k"/>
-                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="top" secondItem="nYz-Ar-quH" secondAttribute="bottom" constant="4" id="ZHZ-Hj-vc5"/>
-                                            <constraint firstAttribute="trailing" secondItem="iby-Q4-ou3" secondAttribute="trailing" constant="8" id="Zon-po-1rD"/>
-                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="top" secondItem="nEb-ii-5Nb" secondAttribute="bottom" constant="4" id="aMA-nV-IW8"/>
-                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="top" secondItem="0mv-ZK-lOP" secondAttribute="bottom" constant="4" id="cuC-lf-FIs"/>
-                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="top" secondItem="qyX-3N-Lbv" secondAttribute="bottom" constant="4" id="eUk-yr-ZeA"/>
-                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="frY-2R-G7L"/>
-                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="gAs-56-6Wc"/>
-                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="gEW-3T-U8J"/>
-                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="top" secondItem="dwA-Rj-qln" secondAttribute="bottom" constant="4" id="j5L-n3-1Le"/>
-                                            <constraint firstItem="abn-82-gSK" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="jcz-Qs-h8T"/>
-                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="mXq-w5-ifa"/>
-                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="nA0-du-Tka"/>
-                                            <constraint firstAttribute="trailing" secondItem="qyX-3N-Lbv" secondAttribute="trailing" constant="8" id="sNL-wh-2nf"/>
-                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="top" secondItem="S5f-5J-Ijw" secondAttribute="bottom" constant="4" id="sZ0-uR-oFZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="FNS-yD-UXQ" secondAttribute="trailing" constant="8" id="tRY-18-KXH"/>
-                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="vDT-3I-sJ5"/>
-                                            <constraint firstAttribute="trailing" secondItem="S5f-5J-Ijw" secondAttribute="trailing" constant="8" id="vls-QE-X4q"/>
-                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="ySf-HC-mPI"/>
+                                            <constraint firstAttribute="trailing" secondItem="FNS-yD-UXQ" secondAttribute="trailing" constant="8" id="1rG-25-OIq"/>
+                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="top" secondItem="Hvj-AD-Jdi" secondAttribute="bottom" id="2Ce-AH-nEI"/>
+                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="4Nh-zc-vEr"/>
+                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="top" secondItem="iby-Q4-ou3" secondAttribute="bottom" id="5uf-et-sMd"/>
+                                            <constraint firstAttribute="trailing" secondItem="fne-TF-EqV" secondAttribute="trailing" constant="8" id="60X-vJ-7Ii"/>
+                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="6EM-WX-IcZ"/>
+                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="top" secondItem="qyX-3N-Lbv" secondAttribute="bottom" id="7S4-bd-OHp"/>
+                                            <constraint firstItem="Hvj-AD-Jdi" firstAttribute="top" secondItem="dwA-Rj-qln" secondAttribute="bottom" id="8c9-qH-hXU"/>
+                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="8ij-BA-aze"/>
+                                            <constraint firstAttribute="trailing" secondItem="QqZ-v8-0pb" secondAttribute="trailing" constant="8" id="8rk-ux-auZ"/>
+                                            <constraint firstItem="QqZ-v8-0pb" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="8vH-Co-kVL"/>
+                                            <constraint firstAttribute="trailing" secondItem="dwA-Rj-qln" secondAttribute="trailing" constant="8" id="9Kr-Ul-zb6"/>
+                                            <constraint firstItem="Hvj-AD-Jdi" firstAttribute="top" secondItem="dwA-Rj-qln" secondAttribute="bottom" id="D3H-AL-M1L"/>
+                                            <constraint firstAttribute="trailing" secondItem="S5f-5J-Ijw" secondAttribute="trailing" constant="8" id="D43-kl-qX4"/>
+                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="top" secondItem="Nbh-Y5-bp5" secondAttribute="bottom" id="DrC-KZ-H5d"/>
+                                            <constraint firstItem="abn-82-gSK" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="GXw-ko-cIC"/>
+                                            <constraint firstItem="QqZ-v8-0pb" firstAttribute="top" secondItem="nEb-ii-5Nb" secondAttribute="bottom" id="KCR-jP-9ce"/>
+                                            <constraint firstAttribute="trailing" secondItem="LeD-x7-JAZ" secondAttribute="trailing" constant="8" id="KP7-Om-P17"/>
+                                            <constraint firstItem="FNS-yD-UXQ" firstAttribute="top" secondItem="jBf-LZ-gs4" secondAttribute="bottom" id="Ktr-3c-uk4"/>
+                                            <constraint firstAttribute="trailing" secondItem="0mv-ZK-lOP" secondAttribute="trailing" constant="8" id="MJD-3C-goO"/>
+                                            <constraint firstAttribute="trailing" secondItem="jBf-LZ-gs4" secondAttribute="trailing" constant="8" id="NKg-up-T6X"/>
+                                            <constraint firstItem="0mv-ZK-lOP" firstAttribute="top" secondItem="nYz-Ar-quH" secondAttribute="bottom" id="QBn-E4-xPu"/>
+                                            <constraint firstAttribute="trailing" secondItem="qyX-3N-Lbv" secondAttribute="trailing" constant="8" id="S9c-vG-dpW"/>
+                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="top" secondItem="S5f-5J-Ijw" secondAttribute="bottom" id="SwJ-gJ-nWl"/>
+                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="X7J-IK-c1C"/>
+                                            <constraint firstItem="fne-TF-EqV" firstAttribute="top" secondItem="0mv-ZK-lOP" secondAttribute="bottom" id="XZh-B9-2fb"/>
+                                            <constraint firstItem="Hvj-AD-Jdi" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="YKy-DH-ZzG"/>
+                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="top" secondItem="fne-TF-EqV" secondAttribute="bottom" id="YZj-nt-wNI"/>
+                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="top" secondItem="fne-TF-EqV" secondAttribute="bottom" id="ZIc-K4-nLL"/>
+                                            <constraint firstItem="nEb-ii-5Nb" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="ZmM-vV-4WD"/>
+                                            <constraint firstItem="QqZ-v8-0pb" firstAttribute="top" secondItem="nEb-ii-5Nb" secondAttribute="bottom" id="aHW-Zh-Zyq"/>
+                                            <constraint firstItem="qyX-3N-Lbv" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="eOX-25-R8h"/>
+                                            <constraint firstAttribute="trailing" secondItem="nEb-ii-5Nb" secondAttribute="trailing" constant="8" id="fWo-44-ZYB"/>
+                                            <constraint firstItem="nYz-Ar-quH" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="gA3-Vt-i2l"/>
+                                            <constraint firstItem="LeD-x7-JAZ" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="hGx-zu-xqx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nbh-Y5-bp5" secondAttribute="trailing" constant="8" id="kiv-wj-ybq"/>
+                                            <constraint firstItem="iby-Q4-ou3" firstAttribute="top" secondItem="Nbh-Y5-bp5" secondAttribute="bottom" id="lD6-M0-hXj"/>
+                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="top" secondItem="qyX-3N-Lbv" secondAttribute="bottom" id="m7B-mu-EsY"/>
+                                            <constraint firstItem="Nbh-Y5-bp5" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="mSW-Z3-vaz"/>
+                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="top" secondItem="iby-Q4-ou3" secondAttribute="bottom" id="nXr-Pg-vf4"/>
+                                            <constraint firstAttribute="trailing" secondItem="nYz-Ar-quH" secondAttribute="trailing" constant="8" id="p2W-K2-NeV"/>
+                                            <constraint firstItem="abn-82-gSK" firstAttribute="top" secondItem="FNS-yD-UXQ" secondAttribute="bottom" id="r8t-Qh-M42"/>
+                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="top" secondItem="QqZ-v8-0pb" secondAttribute="bottom" id="rPd-pV-GWj"/>
+                                            <constraint firstAttribute="trailing" secondItem="iby-Q4-ou3" secondAttribute="trailing" constant="8" id="toQ-DT-CGc"/>
+                                            <constraint firstItem="qyX-3N-Lbv" firstAttribute="top" secondItem="rPU-8E-oBd" secondAttribute="top" id="uCb-90-VzM"/>
+                                            <constraint firstItem="fne-TF-EqV" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="uuF-Kh-nd9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hvj-AD-Jdi" secondAttribute="trailing" constant="8" id="vVN-TK-eEO"/>
+                                            <constraint firstAttribute="trailing" secondItem="abn-82-gSK" secondAttribute="trailing" constant="8" id="xnI-kj-lIx"/>
+                                            <constraint firstItem="S5f-5J-Ijw" firstAttribute="top" secondItem="abn-82-gSK" secondAttribute="bottom" id="y1i-fj-YS1"/>
+                                            <constraint firstItem="jBf-LZ-gs4" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="yU0-lA-mJa"/>
+                                            <constraint firstItem="dwA-Rj-qln" firstAttribute="leading" secondItem="rPU-8E-oBd" secondAttribute="leading" constant="8" id="yaP-hd-MNX"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rPU-8E-oBd" secondAttribute="trailing" constant="8" id="72P-Ir-U44"/>
                                     <constraint firstAttribute="bottom" secondItem="rPU-8E-oBd" secondAttribute="bottom" id="78u-A1-ACf"/>
-                                    <constraint firstItem="ocn-2T-unq" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="40" id="Pi9-7d-Qs5"/>
-                                    <constraint firstItem="ocn-2T-unq" firstAttribute="top" secondItem="fFC-4C-N9P" secondAttribute="top" id="QuG-to-fPK"/>
-                                    <constraint firstItem="rPU-8E-oBd" firstAttribute="top" secondItem="Ajs-oc-kEl" secondAttribute="bottom" constant="8" id="W7S-qK-KQp"/>
-                                    <constraint firstItem="rPU-8E-oBd" firstAttribute="top" secondItem="Ajs-oc-kEl" secondAttribute="bottom" constant="8" id="dqy-Qj-Ogh"/>
-                                    <constraint firstAttribute="trailing" secondItem="ocn-2T-unq" secondAttribute="trailing" constant="40" id="qZD-Ad-AoR"/>
                                     <constraint firstItem="rPU-8E-oBd" firstAttribute="leading" secondItem="fFC-4C-N9P" secondAttribute="leading" constant="8" id="rJf-sc-Bji"/>
-                                    <constraint firstItem="Ajs-oc-kEl" firstAttribute="top" secondItem="ocn-2T-unq" secondAttribute="bottom" constant="8" id="vZh-F0-zXe"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -239,8 +267,23 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonResult" destination="Ajs-oc-kEl" id="DcJ-2B-CcL"/>
+                        <outlet property="BS" destination="Nbh-Y5-bp5" id="y2V-DJ-Iam"/>
+                        <outlet property="BVLP" destination="iby-Q4-ou3" id="eUE-t0-hHj"/>
+                        <outlet property="CC" destination="dwA-Rj-qln" id="1ML-yP-aQP"/>
+                        <outlet property="D" destination="Hvj-AD-Jdi" id="PIn-gh-LE7"/>
+                        <outlet property="E" destination="nEb-ii-5Nb" id="Zg4-FC-aL9"/>
+                        <outlet property="FF" destination="QqZ-v8-0pb" id="RkA-5C-cYH"/>
+                        <outlet property="GM" destination="jBf-LZ-gs4" id="ECJ-FL-1RY"/>
+                        <outlet property="H" destination="FNS-yD-UXQ" id="MOw-Nq-ODL"/>
+                        <outlet property="HD" destination="abn-82-gSK" id="fQe-5l-YxI"/>
+                        <outlet property="L" destination="S5f-5J-Ijw" id="v3c-CN-QB3"/>
+                        <outlet property="P" destination="nYz-Ar-quH" id="6CQ-j1-TAH"/>
+                        <outlet property="S" destination="0mv-ZK-lOP" id="fhG-k8-gvd"/>
+                        <outlet property="SF" destination="fne-TF-EqV" id="wS4-ij-clS"/>
+                        <outlet property="SS" destination="LeD-x7-JAZ" id="Ddx-rc-xbM"/>
                         <outlet property="doneButton" destination="vXE-wJ-Vsf" id="Bk3-hE-iop"/>
+                        <outlet property="freezerButton" destination="M3q-6I-AOu" id="0OE-WP-Tf1"/>
+                        <outlet property="fridgeButton" destination="Sgu-Q2-uvT" id="BpN-cK-gET"/>
                         <outlet property="nameTextField" destination="ocn-2T-unq" id="PgB-Yr-SqV"/>
                         <outletCollection property="foodTypes" destination="Nbh-Y5-bp5" collectionClass="NSMutableArray" id="nwu-cu-sMn"/>
                         <outletCollection property="foodTypes" destination="iby-Q4-ou3" collectionClass="NSMutableArray" id="UXS-LW-Lhv"/>
@@ -254,6 +297,11 @@
                         <outletCollection property="foodTypes" destination="0mv-ZK-lOP" collectionClass="NSMutableArray" id="TYv-n9-Pw3"/>
                         <outletCollection property="foodTypes" destination="LeD-x7-JAZ" collectionClass="NSMutableArray" id="VKG-0w-lM6"/>
                         <outletCollection property="selectButton" destination="qyX-3N-Lbv" collectionClass="NSMutableArray" id="5Ps-GH-CXM"/>
+                        <outletCollection property="foodTypes" destination="FNS-yD-UXQ" collectionClass="NSMutableArray" id="yFi-cg-99e"/>
+                        <outletCollection property="foodTypes" destination="Hvj-AD-Jdi" collectionClass="NSMutableArray" id="gMj-vk-dHK"/>
+                        <outletCollection property="foodTypes" destination="QqZ-v8-0pb" collectionClass="NSMutableArray" id="HG7-8T-oLZ"/>
+                        <outletCollection property="foodTypes" destination="fne-TF-EqV" collectionClass="NSMutableArray" id="Iki-PM-eMq"/>
+                        <outletCollection property="foodTypes" destination="FNS-yD-UXQ" collectionClass="NSMutableArray" id="h2l-Jf-o3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

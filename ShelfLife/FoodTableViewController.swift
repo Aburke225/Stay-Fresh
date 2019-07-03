@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Foundation
 
 class FoodTableViewController: UITableViewController {
     
@@ -62,8 +63,28 @@ class FoodTableViewController: UITableViewController {
         cell.nameLabel.text = food.name
         cell.photoImageView.image = food.photo
         
-        if food.timeLabel >= 0 {
-            cell.timeLabel.text = String(food.timeLabel) + " days left"
+        if food.timeLabel >= 30 {
+            let months = Double(food.timeLabel) / 30.0
+            let rMonths = Int(floor(months))
+            if rMonths > 1 {
+                cell.timeLabel.text = String(rMonths) + " months left"
+            } else {
+                cell.timeLabel.text = String(rMonths) + " month left"
+            }
+        } else if food.timeLabel >= 7 {
+            let weeks = Double(food.timeLabel) / 7.0
+            let rWeeks = Int(floor(weeks))
+            if rWeeks > 1 {
+                cell.timeLabel.text = String(rWeeks) + " weeks left"
+            } else {
+                cell.timeLabel.text = String(rWeeks) + " week left"
+            }
+        } else if food.timeLabel >= 0 {
+            if food.timeLabel == 1 {
+                cell.timeLabel.text = String(food.timeLabel) + " day left"
+            } else {
+                cell.timeLabel.text = String(food.timeLabel) + " days left"
+            }
         } else {
             cell.timeLabel.text = "Expired"
             cell.timeLabel.textColor = UIColor.red
